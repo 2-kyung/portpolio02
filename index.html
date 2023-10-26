@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lugrasimo&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/61ba857e0b.js" crossorigin="anonymous"></script>
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script>
+      $(function(){
+
+        $('h1').click(function(){
+          $('.hh').fadeOut();
+          $('.headerA').fadeIn();
+          $('#menu0').fadeIn();
+          $('header').fadeOut()
+        })
+
+        $('#menu0 h2').click(function(){
+          $('.hh').fadeIn();
+          $('.headerA').fadeOut();
+          $('#menu0').fadeOut();
+          $('header').fadeIn()
+        })
+
+        $('h1').mouseover(function(){
+          $('span').fadeIn()
+          $('h1').css('background-color','rgb(236, 236, 236)').css('border','3px solid white')
+          $('.fa-arrow-pointer').hide()
+        })
+        $('h1').mouseout(function(){
+          $('span').fadeOut()
+          $('h1').css('background-color','').css('border','')
+          $('.fa-arrow-pointer').show()
+
+        })
+      })
+    </script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        text-decoration: none;
+        list-style: none;
+        color: inherit;
+        ::-webkit-scrollbar{
+          display: none;
+        }
+      }
+      body {
+        background-size: 100% 100%;
+        background-color: rgb(236, 236, 236);
+      }
+      #wrap {
+        width: 90%;
+        height: 100vh;
+        margin: 0 auto;
+        overflow: hidden;
+      }
+
+      /* header */
+      header {
+        width: 100%;
+        text-align: center;
+        padding: 100px;
+        z-index: 300;
+        color: rgb(130,130,130);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        filter: blur(0);
+      }
+      header h2 {
+        font-family: 'Lugrasimo', cursive;
+        position: fixed;
+        top: -50px;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+      header h1{
+        cursor: pointer;
+        font-size: 60px;
+        z-index: 300;
+        font-family: 'Lugrasimo', cursive;
+        transition: 1s;
+        display: noe;
+        width: 80%;
+        height: 200px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        line-height: 200px;
+        border: none;
+        border-radius: 50px;
+        background-color: rgba(255, 255, 255, 0.5);
+      }
+      span {
+        display: none;
+        border-radius: 50px;
+      }
+      header .fa-arrow-pointer {
+        position: absolute;
+        top: 100%;
+        left: 70%;
+        font-size: 50px;
+        animation: infinite kk 3s;
+        color: rgb(130,130,130);
+      }
+      @keyframes kk {
+        0% {opacity: 0;}
+        40% {top: 50%; left: 55%; opacity: 1; scale: 1;}
+        55% {top: 50%; left: 55%; opacity: 1; scale: 0.8;}
+        70% {top: 50%; left: 55%; opacity: 1; scale: 1;}
+        100% {opacity: 0;}
+      }
+      .headerA {
+        z-index: 300;
+        position: absolute;
+        top: 53%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-family: 'Bitter', serif;
+        display: flex;
+        flex-flow: row;
+        color: darkgray;
+      }
+      .headerA li {
+        text-align: center;
+        padding: 60px;
+      }
+      .headerA li ul {
+        display: flex;
+        flex-flow: column nowrap;
+        margin-top: 20px;
+      }
+      .headerA li ul li {
+        padding: 10px;
+        width: 100%;
+      }
+      .myList:hover, .project li:hover, .design li:hover {
+        color: rgb(116, 122, 128);
+        transition: 1s;
+      }
+
+      #menu0 {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: rgba(0, 0, 0, 0.7);
+        width: 100%;
+        height: 80vh;
+        display: none;
+        position: relative;
+        color: darkgray;
+      }
+      
+      #menu0 h2{
+        font-size: 30px;
+        position: absolute;
+        top: 20px;
+        right: 40px;
+        cursor: pointer;
+      }
+
+
+      #icons {
+        display: flex;
+        text-align: center;
+        position: fixed;
+        top: 300px;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+      .icon {
+        margin: 50px;
+        display: flex;
+      }
+      .icon i {
+        margin-right: 10px;
+        font-size: 25px;
+      }
+      br {
+        display: none;
+      }
+
+      @media screen and (max-width: 1200px) {
+        header {
+          padding: 0;
+        }
+        header h1 {
+          height: 100px;
+          line-height: 100px;
+        }
+        .hh h2 {
+          margin-top: -50px;
+        }
+        .headerA {
+          flex-flow: column wrap;
+        }
+        .headerA li {
+          padding: 10px;
+          flex-flow: column wrap;
+          
+        }
+      .headerA li ul li {
+        width: 100%;
+      }
+      #menu {
+        padding: 30px;
+      }
+      br {
+        display: block;
+      }
+    
+
+      #icons {
+        flex-flow: column nowrap;
+        top: 150px;
+      }
+      .icon {
+        margin: 10px;
+      }
+      span {
+        display: block;
+        font-size: 30px;
+      }
+
+      header .fa-arrow-pointer {
+        top: 200px;
+        left: 70%;
+      }
+      @keyframes kk {
+        0% {opacity: 0;}
+        40% {top: 50%; left: 55%; opacity: 1; scale: 1;}
+        55% {top: 50%; left: 55%; opacity: 1; scale: 0.8;}
+        70% {top: 50%; left: 55%; opacity: 1; scale: 1;}
+        100% {opacity: 0;}
+      }
+      }
+      
+    </style>
+  </head>
+  <body>
+    <div id="wrap">
+      <header>
+        <div class="hh">
+          <h2 style="font-family: 'Nanum Gothic', sans-serif;">웹퍼블리셔<br class="br"> 이경화 입니다</h2>
+          <h1><a href="index.html"></a><span>CLICK HERE</span></h1>
+          <i class="fa-solid fa-arrow-pointer"></i>
+        </div>
+        <div id="icons">
+          <div class="icon">
+            <i class="fa-regular fa-envelope"></i>
+            <p>kyunghwoa01@gmail.com</p>
+          </div>
+          <div class="icon">
+            <i class="fa-brands fa-instagram"></i>
+            <p>ho_wa.aaaa</p>
+          </div>
+          <div class="icon">
+            <i class="fa-solid fa-phone" style="font-size: 20px;"></i>
+            <p>010.4756.0663</p>
+        </div>
+      </div>
+    </header>
+
+        <ul class="headerA" style="display: none;">
+          <li><a href="my.html" style="font-weight: bold; font-size: 1.2em; margin-bottom: 20px;">PROFILE</a>
+          <ul class="myList">
+            <a href="my.html" style="margin-bottom: 30px;">About Me</a>
+          </ul>
+          </li>
+
+          <li class="project">
+            <a href="project.html" style="font-weight: bold; font-size: 1.2em; margin-bottom: 20px;">PROJECT</a>
+            <ul class="projectList">
+              <a href="project.html"><li>project 01</li></a>
+              <a href="project.html"><li>project 02</li></a>
+              <a href="project.html" style="margin-bottom: 30px;"><li>project 03</li></a>
+            </ul>
+          </li>
+          <li class="design">
+            <a href="design.html" style="font-weight: bold; font-size: 1.2em; margin-bottom: 20px;">DESIGN</a>
+            <ul class="designList">
+              <a href="design.html"><li>design 01</li></a>
+              <a href="design.html"><li>design 02</li></a>
+              <a href="design.html"><li>design 03</li></a>
+              <a href="design.html"><li>design 04</li></a>
+            </ul>
+          </li>
+        </ul>
+        <div id="menu0">
+          <h2>&#10005;</h2>
+        </div>
+  </body>
+</html>

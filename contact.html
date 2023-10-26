@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script>
+      $(function(){
+        $('.headerB').hide()
+        $('span').on({
+          'click':function(){
+            $('.headerB').slideToggle()
+            $('#menu').fadeToggle()
+            $('span').fadeOut()
+            $('#design').css('filter','blur(10px)')
+            $('#small').css('filter','blur(10px)')
+            $('h1').css('filter','blur(10px)')
+          }
+        })
+
+        $('#menu h2').click(function(){
+          $('span').fadeIn()
+          $('.headerB').fadeOut();
+          $('#menu').fadeOut();
+          $('#design').css('filter','blur(0)')
+          $('#small').css('filter','blur(0)')
+          $('h1').css('filter','blur(0)')
+
+        })
+
+/////////////////////////////////
+
+        $('#facebook').click(function(){
+            $('#small').fadeIn()
+            $('.facebook').show()
+            $('.instagram').hide()
+            $('.kakaotalk').hide()
+            $('.tel').hide()
+            $('#design').css('top','40%')
+        })
+        $('#facebook').dblclick(function(){
+          $('#small').fadeOut()
+          $('#design').css('top','50%')
+        })
+
+        $('#instagram').click(function(){
+            $('#small').fadeIn()
+            $('.facebook').hide()
+            $('.instagram').show()
+            $('.kakaotalk').hide()
+            $('.tel').hide()
+            $('#design').css('top','40%')
+        })
+        $('#instagram').dblclick(function(){
+          $('#small').fadeOut()
+          $('#design').css('top','50%')
+        })
+
+        $('#kakaotalk').click(function(){
+            $('#small').fadeIn()
+            $('.facebook').hide()
+            $('.instagram').hide()
+            $('.kakaotalk').show()
+            $('.tel').hide()
+            $('#design').css('top','40%')
+        })
+        $('#kakaotalk').dblclick(function(){
+          $('#small').fadeOut()
+          $('#design').css('top','50%')
+        })
+
+        $('#tel').click(function(){
+            $('#small').fadeIn()
+            $('.facebook').hide()
+            $('.instagram').hide()
+            $('.kakaotalk').hide()
+            $('.tel').show()
+            $('#design').css('top','40%')
+        })
+        $('#tel').dblclick(function(){
+          $('#small').fadeOut()
+          $('#design').css('top','50%')
+        })
+      })
+    </script>
+</head>
+<style>
+  * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        text-decoration: none;
+        list-style: none;
+        text-align: center;
+        color: inherit;
+        ::-webkit-scrollbar{
+          display: none;
+        }
+      }
+      body {
+        background-color: rgb(40, 40, 40);
+        font-family: 'Bitter', serif;
+      }
+      #wrap {
+        width: 90%;
+        height: 953px;
+        margin: 0 auto;
+        overflow: hidden;
+      }
+
+      ::-webkit-scrollbar{
+        display: none;
+      }
+      span {
+        position: fixed;
+        top: 30px;
+        right: 0;
+        font-size: 30px;
+        color: white;
+        cursor: pointer;
+        padding-right: 30px;
+        z-index: 300;
+      }
+      .headerB {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        color: black;
+        padding: 30px;
+        z-index: 300;
+        display: flex;
+      }
+      .headerB li {
+        padding: 10px 30px;
+        font-size: 1.2em;
+      }
+      .headerB li ul {
+        font-size: 0.7em;
+        margin-top: 20px;
+      }
+      .headerB li ul li {
+        width: 100%;
+      }
+      .headerB li ul li:hover {
+        color: rgb(103, 127, 143);
+        transition: 1s;
+      }
+      #menu {
+        position: fixed;
+        top: 50px;
+        right: 4.5%;
+        background-color: rgba(255, 255, 255, 0.5);
+        width: 90%;
+        height: 90%;
+        display: none;
+        z-index: 200;
+      }
+      #menu h2 {
+        font-size: 30px;
+        position: fixed;
+        top: 70px;
+        right: 9%;
+        cursor: pointer;
+      }
+
+      body{
+        width: 100%;
+        overflow: hidden;
+      }
+
+      #design {
+        width: 70%;
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-around;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        margin: 0 auto;
+        border: 3px solid rgba(255, 255, 255, 0.5);
+        border-radius: 50px;
+        padding: 50px;
+        transition: 1s;
+        background-color: rgb(70, 70, 70);
+      }
+      #design .con {
+        float: left;
+        width: 100px;
+        margin: 20px;
+      }
+      #design img {
+        filter: saturate(0);
+        width: 100%;
+        transition: 1s;
+      }
+      #design img:hover {
+        filter: saturate(1);
+        transition: 1s;
+      }
+
+      #small {
+        display: none;
+        width: 600px;
+        background-color: rgba(255, 255, 255, 0.5);
+        padding: 50px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        margin-top: 150px;
+        transition: 1s;
+      }
+
+      #small .span {
+        font-size: 12px;
+        color: rgb(100,100,100);
+        text-align: center;
+        margin: 50px 0 -30px 0;
+      }
+
+      h1 {
+        position: fixed;
+        top: 325px;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        margin: 0 auto;
+        color: white;
+        font-weight: bolder;
+        font-size: 50px;
+        text-shadow: 3px 4px 1px gray;
+        transition: 1s;
+      }
+
+      /* @media screen and (min-width:700px) and (max-width:950px) {
+        #design {
+          width: 50%;
+          position: absolute;
+          top: 380px;
+          transition: 1s;
+        }
+        #small {
+          top: 60%;
+        }
+      } */
+
+      @media screen and (max-width: 950px) {
+        body {
+          overflow: auto;
+        }
+        #design {
+          margin-top: 300px;
+        }
+        #design .con {
+          width: 100%;
+          margin: 20px 0 100px 0;
+        }
+        #design img { 
+          width: 150px;
+          filter: saturate(1);
+        }
+        #small {
+          display: block;
+          margin: 0 auto;
+          width: 200px;
+          background-color: rgba(0,0,0,0);
+          color: white;
+        }
+        #small .span {
+          display: none;
+        }
+
+        .facebook {
+          position: absolute;
+          top: 0px;
+          left: -50px;
+        }
+        .instagram {
+          position: absolute;
+          top: 280px;
+          left: 45px;
+        }
+        .kakaotalk {
+          position: absolute;
+          top: 560px;
+          left: 45px;
+        }
+        .tel {
+          position: absolute;
+          top: 820px;
+          left: 0px;
+        }
+
+        .headerB {
+          display: flex;
+          flex-flow: column nowrap;
+        }
+        .headerB li {
+        padding: 10px;
+      }
+        .headerB li ul li {
+          width: 100%;
+        }
+        h1 {
+          top: 100px;
+        }
+      }
+</style>
+<body>
+    <main>
+      <span>&#9776;</span>
+      <ul class="headerB">
+        <li style="margin-bottom: 30px">
+          <a href="index.html" style="font-weight: bold">HOME</a>
+        </li>
+        <li style="margin-bottom: 30px">
+          <a href="my.html" style="font-weight: bold">PROFILE</a>
+          <ul>
+            <a href="my.html"><li>About Me</li></a>
+          </ul>
+        </li>
+        
+        <li style="margin-bottom: 30px">
+          <a href="project.html" style="font-weight: bold">PROJECT</a>
+          <ul>
+            <a href="project.html"><li>project 01</li></a>
+            <a href="project.html"><li>project 02</li></a>
+            <a href="project.html"><li>project 03</li></a>
+          </ul>
+        </li>
+        <li>
+          <a href="design.html" style="font-weight: bold">DESIGN</a>
+          <ul>
+            <a href="design.html"><li>design 01</li></a>
+            <a href="design.html"><li>design 02</li></a>
+            <a href="design.html"><li>design 03</li></a>
+            <a href="design.html"><li>design 04</li></a>
+          </ul>
+        </li>
+      </ul>
+      <div id="menu">
+        <h2>&#10005;</h2>
+      </div>
+
+      <h1>DESIGN</h1>
+        <div id="design">
+          <div id="a">
+            
+            <div id="facebook" class="con">
+              <img src="img/facebook.png"/>
+            </div>
+            <div id="instagram" class="con">
+              <img src="img/instagram.png"/>
+            </div>
+            <div id="kakaotalk" class="con">
+              <img src="img/kakao.png"/>
+            </div>
+            <div id="tel" class="con">
+              <img src="img/tel.png">
+            </div>
+          </div>
+        </div>
+
+        <div id="small">
+          <!-- <h2>&#10005;</h2> -->
+          <p class="facebook"><b>LINK :</b> https://www.facebook.com/profile.php?id=100009261789801&mibextid=LQQJ4d</p>
+          <p class="instagram"><b>ID :</b> ho_wa.aaaa</p>
+          <p class="kakaotalk"><b>ID :</b> Ggang1415</p>
+          <p class="tel"><b>TEL :</b> 010.4756.0663 <br> EMAIL : kyungwhoa01@gmail.com</p>
+          <h5 class="span">아이콘을 더블클릭해서 창을 닫으세요</h5>
+        </div>
+      </main>
+    </div>
+</body>
+</html>
