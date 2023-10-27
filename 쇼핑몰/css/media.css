@@ -1,0 +1,58 @@
+@media screen and (max-width:900px){
+    header h1 {
+        box-shadow: 0 0 5px rgba(0,0,0,0.2);
+        text-align: left;
+        padding-left: 20%;
+    }
+    .navi {
+        text-align: center;
+        display: block;
+        margin-left: 0%;
+    }
+    
+    .navi>li {
+        width: 33.33333%;
+        float: left;
+        padding: 10px;
+        background-color: white;
+        display: none;
+    }
+
+    .navi-a {
+        text-align: right;
+    }
+    
+    .navi-b {
+        text-align: left;
+    }
+    
+
+    /* new */    
+    
+    .newImg {
+        width: 100%;
+        margin: 5% auto;
+    }
+    
+    .newImg img {
+        width: 49%;
+    }
+    
+    .newImg img:hover {
+        filter: brightness(0.8);
+        transition: 0.8s;
+    }
+
+    /* review */
+    .reviewImg a {
+        width: 49%;
+    }
+
+    .reviewImg a:nth-child(5), .reviewImg a:nth-child(6), .reviewImg a:nth-child(7), .reviewImg a:nth-child(8) {
+        display: none;
+    }
+
+    footer {
+        font-size: 12px;
+    }
+}
