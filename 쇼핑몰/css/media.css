@@ -1,0 +1,20 @@
+@media screen and (max-width:900px){
+    .navi {
+        text-align: center;
+        display: block;
+    }
+    
+    .navi>li {
+        width: 33.3%;
+        float: left;
+        padding: 10px;
+        border-bottom: 0.3px solid gray;
+        border-right: 0.3px solid gray;
+    }
+    
+    .navi>li:hover {
+        transition: 1s;
+        color: chocolate;
+        background-color: aliceblue;
+    }
+}
